@@ -1,0 +1,301 @@
+[{
+    "_id": "_collection",
+    "name": "airline"
+},
+{
+    "_id": "_collection",
+    "name": "plane"
+},
+{
+    "_id": "_collection",
+    "name": "person"
+},
+{
+    "_id": "_collection",
+    "name": "repair"
+},
+{
+    "_id": "_collection",
+    "name": "section"
+},
+{
+    "_id": "_collection",
+    "name": "part"
+},
+{
+    "_id": "_collection",
+    "name": "trip"
+},
+{
+    "_id": "_collection",
+    "name": "location"
+},
+{
+    "_id": "_collection",
+    "name": "issue"
+},
+{
+    "_id": "_collection",
+    "name": "manufacturer"
+},
+{
+    "_id": "_predicate",
+    "name": "repair/name",
+    "type": "string",
+    "unique": true
+},
+{
+    "_id": "_predicate",
+    "name": "repair/description",
+    "type": "string"
+},
+{
+    "_id": "_predicate",
+    "name": "repair/startDate",
+    "type": "instant"
+},
+{
+    "_id": "_predicate",
+    "name": "repair/endDate",
+    "type": "instant"
+},
+{
+    "_id": "_predicate",
+    "name": "repair/issues",
+    "type": "ref",
+    "restrictCollection": "issue"
+},
+{
+    "_id": "_predicate",
+    "name": "repair/plane",
+    "type": "ref",
+    "restrictCollection": "plane"
+},
+{
+    "_id": "_predicate",
+    "name": "repair/sections",
+    "type": "ref",
+    "multi": true,
+    "restrictCollection": "section"
+},
+{
+    "_id": "_predicate",
+    "name": "repair/parts",
+    "type": "ref",
+    "multi": true,
+    "restrictCollection": "part"
+},
+{
+    "_id": "_predicate",
+    "name": "repair/leadPerson",
+    "type": "ref",
+    "restrictCollection": "person"
+},
+{
+    "_id": "_predicate",
+    "name": "repair/team",
+    "type": "ref",
+    "restrictCollection": "person",
+    "multi": true
+},
+
+
+{
+    "_id": "_predicate",
+    "name": "issue/name",
+    "type": "string",
+    "unique": true
+},
+{
+    "_id": "_predicate",
+    "name": "issue/date",
+    "type": "instant"
+},
+{
+    "_id": "_predicate",
+    "name": "issue/description",
+    "type": "string"
+},
+{
+    "_id": "_predicate",
+    "name": "issue/plane",
+    "type": "ref",
+    "restrictCollection": "plane"
+},
+{
+    "_id": "_predicate",
+    "name": "issue/sections",
+    "type": "ref",
+    "multi": true,
+    "restrictCollection": "section"
+},
+{
+    "_id": "_predicate",
+    "name": "issue/parts",
+    "type": "ref",
+    "multi": true,
+    "restrictCollection": "part"
+},
+{
+    "_id": "_predicate",
+    "name": "issue/closed",
+    "type": "boolean"
+},
+{
+    "_id": "_predicate",
+    "name": "issue/issuer",
+    "type": "ref",
+    "restrictCollection": "person"
+},
+{
+    "_id": "_predicate",
+    "name": "person/roles",
+    "type": "tag",
+    "multi": true
+},
+{
+    "_id": "_predicate",
+    "name": "person/id",
+    "type": "string",
+    "unique": true
+},
+{
+    "_id": "_predicate",
+    "name": "airline/name",
+    "type": "string",
+    "unique": true
+},
+{
+    "_id": "_predicate",
+    "name": "airline/planes",
+    "type": "ref",
+    "restrictCollection": "plane",
+    "multi": true
+},
+{
+    "_id": "_predicate",
+    "name": "plane/id",
+    "type": "string",
+    "unique": true
+},
+{
+    "_id": "_predicate",
+    "name": "plane/name",
+    "type": "string",
+    "unique": true
+},
+{
+    "_id": "_predicate",
+    "name": "plane/type",
+    "type": "tag"
+},
+{
+    "_id": "_predicate",
+    "name": "plane/manufactureDate",
+    "type": "instant"
+},
+{
+    "_id": "_predicate",
+    "name": "plane/trips",
+    "type": "ref",
+    "multi": true,
+    "restrictCollection": "trip"
+},
+{
+    "_id": "_predicate",
+    "name": "plane/sections",
+    "type": "ref",
+    "multi": true,
+    "restrictCollection": "section"
+},
+{
+    "_id": "_predicate",
+    "name": "section/id",
+    "type": "string",
+    "unique": true
+},
+{
+    "_id": "_predicate",
+    "name": "section/type",
+    "type": "tag"
+},
+{
+    "_id": "_predicate",
+    "name": "section/subSections",
+    "type": "ref",
+    "restrictCollection": "section",
+    "multi": true
+},
+{
+    "_id": "_predicate",
+    "name": "section/parts",
+    "type": "ref",
+    "multi": true,
+    "restrictCollection": "part"
+},
+{
+    "_id": "_predicate",
+    "name": "part/id",
+    "type": "string",
+    "unique": true
+},
+{
+    "_id": "_predicate",
+    "name": "part/type",
+    "type": "tag"
+},
+{
+    "_id": "_predicate",
+    "name": "part/installDate",
+    "type": "instant"
+},
+{
+    "_id": "_predicate",
+    "name": "part/original",
+    "type": "boolean"
+},
+{
+    "_id": "_predicate",
+    "name": "part/removeDate",
+    "type": "instant"
+},
+{
+    "_id": "_predicate",
+    "name": "part/manufacturer",
+    "type": "ref",
+    "restrictCollection": "manufacturer"
+},
+{
+    "_id": "_predicate",
+    "name": "manufacturer/name",
+    "type": "string",
+    "unique": true
+},
+{
+    "_id": "_predicate",
+    "name": "trip/id",
+    "type": "string",
+    "unique": true
+},
+{
+    "_id": "_predicate",
+    "name": "trip/startLocation",
+    "type": "geojson"
+},
+{
+    "_id": "_predicate",
+    "name": "trip/endLocation",
+    "type": "geojson"
+},
+{
+    "_id": "_predicate",
+    "name": "trip/startDate",
+    "type": "instant"
+},
+{
+    "_id": "_predicate",
+    "name": "trip/endDate",
+    "type": "instant"
+}
+
+]
